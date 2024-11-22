@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import controller.App;
 import view.AppWindow;
 
 public class Snake {
