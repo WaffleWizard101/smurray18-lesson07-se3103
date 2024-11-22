@@ -26,4 +26,26 @@ public class Snake {
             nodes.add(new SnakeNode(x, y));
         }
     }
+
+    public void move() {
+        for(int i = nodes.size() - 1; i > 0; i--) {
+            nodes.get(i).x = nodes.get(i-1).x;
+            nodes.get(i).y = nodes.get(i-1).y;
+        }
+        SnakeNode head = nodes.get(0);
+
+        switch (direction) {
+            case LEFT:
+                head.x -= AppWindow.GRID_SIZE;
+                break;
+            case RIGHT:
+                head.x += AppWindow.GRID_SIZE;
+                break;
+            case UP:
+                head.y += AppWindow.GRID_SIZE;
+                break;
+            case DOWN:
+                head.y -= AppWindow.GRID_SIZE;
+        }
+    }
 }
