@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 public class AppWindow extends JFrame {
 
     private AppCanvas canvas;
+    public static final int GRID_SIZE = 20;
 
     public void init() {
         Container cp = getContentPane();
