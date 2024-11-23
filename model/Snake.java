@@ -12,6 +12,7 @@ public class Snake {
     private final int INIT_NODES = 6;
     private Direction direction;
 
+
     public Snake() {
         init();
     }
@@ -41,10 +42,18 @@ public class Snake {
                 head.x += AppWindow.GRID_SIZE;
                 break;
             case UP:
-                head.y += AppWindow.GRID_SIZE;
+                head.y -= AppWindow.GRID_SIZE;
                 break;
             case DOWN:
-                head.y -= AppWindow.GRID_SIZE;
+                head.y += AppWindow.GRID_SIZE;
         }
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 }
