@@ -9,10 +9,14 @@ import javax.swing.JPanel;
 
 import controller.ButtonPressListener;
 import controller.KeyPressListener;
+import view.GameState.*;
 
 public class AppWindow extends JFrame {
 
     private AppCanvas canvas;
+
+    private GameState gameState;
+
     public static final int GRID_SIZE = 20;
 
     public JButton startPauseButton;
@@ -51,9 +55,20 @@ public class AppWindow extends JFrame {
         startPauseButton.setFocusable(false);
         restartButton.setFocusable(false);
         exitButton.setFocusable(false);
+
+        gameState = new GameStateInit(this);
     }
     
     public AppCanvas getCanvas() {
         return canvas;
+    }
+
+    public void goNextState()
+    {
+        gameState.nextState(this);
+    }
+
+    public void setGameState(GameState state) {
+        this.gameState = state;
     }
 }
