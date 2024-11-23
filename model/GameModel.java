@@ -19,7 +19,6 @@ public class GameModel {
     }
     
     public void init() {
-        snake.init();
         score = 0;
         messages = "Click <Start> to play!";
         food = createFood();
