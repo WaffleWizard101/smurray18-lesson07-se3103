@@ -71,4 +71,8 @@ public class AppWindow extends JFrame {
     public void setGameState(GameState state) {
         this.gameState = state;
     }
+
+    public GameState getGameState() {
+        return gameState;
+    }
 }
