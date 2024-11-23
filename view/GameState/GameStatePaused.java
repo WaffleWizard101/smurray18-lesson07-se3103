@@ -3,9 +3,9 @@ package view.GameState;
 import controller.App;
 import view.AppWindow;
 
-public class GameStateInit implements GameState {
-
-    public GameStateInit() {
+public class GameStatePaused implements GameState {
+    
+    public GameStatePaused() {
         App.win.startPauseButton.setText(AppWindow.START_ACTION);
         App.win.restartButton.setEnabled(false);
         App.win.startPauseButton.setEnabled(true);
