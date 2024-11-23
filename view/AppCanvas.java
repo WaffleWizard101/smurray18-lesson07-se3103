@@ -67,11 +67,15 @@ public class AppCanvas extends JPanel {
         else g2.draw(r);
     }
 
-    void drawFood(Graphics2D g2, Food food) {
-
+    private void drawFood(Graphics2D g2, Food food) {
+        var e = new Ellipse2D.Float(food.x, food.y, AppWindow.GRID_SIZE, AppWindow.GRID_SIZE);
+        g2.setColor(Color.pink);
+        g2.fill(e);
     }
 
-    void drawMessages(Graphics2D g2, String messages) {
-
+    private void drawMessages(Graphics2D g2, String messages) {
+        g2.setColor(Color.yellow);
+        g2.setFont(new Font("Courier New", Font.PLAIN, 28));
+        g2.drawString(messages, 50, 140);
     }
 }
