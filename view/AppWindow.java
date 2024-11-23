@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controller.ButtonPressListener;
+import controller.KeyPressListener;
 
 public class AppWindow extends JFrame {
 
@@ -41,6 +42,15 @@ public class AppWindow extends JFrame {
         restartButton.addActionListener(buttonPressListener);
         exitButton.addActionListener(buttonPressListener);
 
+        KeyPressListener keyPressListener = new KeyPressListener();
+        canvas.addKeyListener(keyPressListener);
+        canvas.requestFocusInWindow();
+        canvas.setFocusable(true);
+
+        // disable focusable in other GUI components
+        startPauseButton.setFocusable(false);
+        restartButton.setFocusable(false);
+        exitButton.setFocusable(false);
     }
     
     public AppCanvas getCanvas() {
