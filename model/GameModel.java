@@ -3,6 +3,7 @@ package model;
 import java.util.Random;
 
 import controller.App;
+import controller.SnakeEventListener;
 import view.AppCanvas;
 import view.AppWindow;
 
@@ -23,6 +24,8 @@ public class GameModel {
         messages = "Click <Start> to play!";
         food = createFood();
         snake.init();
+        SnakeEventListener listener = new SnakeEventListener();
+        snake.addObserver(listener);
     }
 
     public Food createFood() {

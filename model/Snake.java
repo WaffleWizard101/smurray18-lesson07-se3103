@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 import model.observerPattern.*;
+import view.AppCanvas;
 import view.AppWindow;
 
 public class Snake implements Subject {
@@ -50,6 +51,13 @@ public class Snake implements Subject {
                 break;
             case DOWN:
                 head.y += AppWindow.GRID_SIZE;
+        }
+    }
+    public void fallOffScreen() {
+        if(nodes.get(0).y <= AppCanvas.HEIGHT - AppWindow.GRID_SIZE) {
+            for(var n: nodes) {
+                n.y += 5;
+            }
         }
     }
 

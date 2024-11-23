@@ -15,7 +15,7 @@ public class GameStateOver implements GameState {
     }
     
     public void animate() {
-        //snake falling effect
+        App.model.snake.fallOffScreen();
     }
     
 }
