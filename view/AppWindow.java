@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import controller.ButtonPressListener;
+
 public class AppWindow extends JFrame {
 
     private AppCanvas canvas;
@@ -33,6 +35,15 @@ public class AppWindow extends JFrame {
         southPanel.add(restartButton);
         southPanel.add(exitButton);
         cp.add(BorderLayout.SOUTH, southPanel);
+
+        ButtonPressListener buttonPressListener = new ButtonPressListener();
+        startPauseButton.addActionListener(buttonPressListener);
+        restartButton.addActionListener(buttonPressListener);
+        exitButton.addActionListener(buttonPressListener);
+
     }
     
+    public AppCanvas getCanvas() {
+        return canvas;
+    }
 }
