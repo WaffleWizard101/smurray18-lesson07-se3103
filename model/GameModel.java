@@ -22,6 +22,7 @@ public class GameModel {
         score = 0;
         messages = "Click <Start> to play!";
         food = createFood();
+        snake.init();
     }
 
     public Food createFood() {
@@ -43,16 +44,16 @@ public class GameModel {
     public boolean snakeHitWall() {
         var head = App.model.snake.nodes.get(0);
         return head.x < 0 || head.x >= AppCanvas.WIDTH
-            || head.y <= 0 || head.y >= AppCanvas.HEIGHT;
+            || head.y < 0 || head.y >= AppCanvas.HEIGHT;
     }
 
-    public boolean hitSelf() {
+    public boolean snakeHitSelf() {
         var nodes = App.model.snake.nodes;
         var head = nodes.get(0);
 
         for(int i = 1; i < nodes.size(); i++) {
             var bodyPart = nodes.get(i);
-            if(head.x == bodyPart.x && head.y == bodyPart.y);
+            if(head.x == bodyPart.x && head.y == bodyPart.y)
                 return true;
         }
         return false;

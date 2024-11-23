@@ -12,7 +12,12 @@ public class GameStatePlaying implements GameState {
     }
 
     public void nextState(AppWindow context) {
-        context.setGameState(new GameStatePaused());
+        if(App.model.snakeHitSelf() || App.model.snakeHitWall()) {
+            context.setGameState(new GameStateOver());
+        }
+        else {
+            context.setGameState(new GameStatePaused());
+        }
     }
     
     public void animate() {

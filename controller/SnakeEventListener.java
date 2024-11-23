@@ -9,6 +9,7 @@ public class SnakeEventListener implements SnakeObserver {
     public void hitFood() {
         App.model.score += 10;
         App.model.snake.nodes.add(new SnakeNode(-100, -100));
+        App.model.food = App.model.createFood();
     }   
 
     @Override

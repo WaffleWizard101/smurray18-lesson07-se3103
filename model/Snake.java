@@ -28,6 +28,7 @@ public class Snake implements Subject {
             int y = INIT_YLOC;
             nodes.add(new SnakeNode(x, y));
         }
+        observers = new ArrayList<SnakeObserver>();
     }
 
     public void move() {
