@@ -56,7 +56,7 @@ public class AppWindow extends JFrame {
         restartButton.setFocusable(false);
         exitButton.setFocusable(false);
 
-        gameState = new GameStateInit(this);
+        gameState = new GameStateInit();
     }
     
     public AppCanvas getCanvas() {
